@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Book Nook</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Comic Sans MS", "Poppins", cursive;
+            background-color: #fdf6f9;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: #f9b8d0;
+            color: #000;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header p {
+            font-style: italic;
+        }
+
+        /* --- Navigation Bar --- */
+        nav {
+            background-color: #f9d3e0;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Home Section --- */
+        #home {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        /* --- Book Tiles --- */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 30px;
+        }
+
+        section {
+            background-color: #fff;
+            border: 2px solid #f9b8d0;
+            border-radius: 12px;
+            width: 320px;
+			height: auto;
+			min-height: 450px;
+			margin:10px 0 15px 0;
+			word-wrap: break-word;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			transition: transform 0.2s ease;
+        }
+		
+		section:hover {
+		transform: scale(1.03);
+		}
+
+        section img {
+            width: 100%;
+            height: auto;
+			max-height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            margin: 10px 0 5px 0;
+        }
+
+        #about p {
+            font-size: 1.2em;
+			line-height: 1.6;
+            margin: 5px 0 15px 0;
+        }
+
+        /* --- Buy Button --- */
+        .buy-btn {
+            background-color: #f9b8d0;
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background-color: #f48fb1;
+        }
+
+        /* --- About and Contact Wrapper --- */
+        .info-wrapper {
+            display: flex;
+			flex-direction: column;
+			align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+            background-color: #fff;
+            border-top: 2px solid #f9b8d0;
+        }
+
+        .info-box {
+            flex: 1 1 100%;
+			width: 90%;
+			max-width: none;
+			margin: 0 auto;
+            background-color: #fff;
+            border: 2px solid #f9b8d0;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center
+        }
+
+        .info-box h2 {
+            margin-top: 0;
+        }
+
+        #contact p {.
+			font size: 1.6em;
+            line-height: 1.5;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #f9b8d0;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+        
+        @media (max-width: 600px) {
+            main { flex-direction: column; align-items: center; }
+            .info-wrapper { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header and Home Section -->
+    <header id="home">
+        <h1>The Book Nook</h1>
+        <p>Welcome to our cozy corner with great reads</p>
+        <p>There's a perfect book for everyone. Whether you’re here to find your next page turner or just to browse, we're glad you're here!</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Book Tiles -->
+    <main>
+        <!-- Book 1: The Great Gatsby -->
+        <section>
+            <img src="https://www.readerswarehouse.co.za/cdn/shop/files/Great_720x.webp?v=1752745017" alt="The Great Gatsby cover image">
+            <h2>The Great Gatsby</h2>
+			<h3>F.Scott Fitzgerald</h3>
+            <p>"At its core, "The Great Gatsby" is a timeless exploration of the elusive nature of the 
+			American Dream and the consequences of its pursuit. Fitzgerald's masterpiece continues to resonate with readers today, 
+			serving as both a cautionary tale and a celebration of the power of hope and longing." -Readers Warehouse<br>
+			<br>
+			Image from Readers Warehouse website<br> 
+			( https://www.readerswarehouse.co.za/ )
+			</p>
+			
+            <button class="buy-btn">Buy</button>
+        </section>
+
+        <!-- Book 2: The Cousins -->
+        <section>
+            <img src="https://www.readerswarehouse.co.za/cdn/shop/files/the-cousins9780241376942-733586_1800x1800.jpg?v=1752723100" alt="The Cousins cover image">
+            <h2>The Cousins</h2>
+			<h3>Karen M. McManus</h3>
+            <p>"A quartet of siblings face a heart-pounding quest to discover the dark truth about their family in the latest 
+			YA murder mystery from the author of One of Us Is Lying." -Readers Warehouse<br>
+			<br>
+			Image from Readers Warehouse website<br> 
+			( https://www.readerswarehouse.co.za/ )
+			</p>
+            <button class="buy-btn">Buy</button>
+        </section>
+
+        <!-- Book 3: It's Not Summer Without You -->
+        <section>
+            <img src="https://www.readerswarehouse.co.za/cdn/shop/products/its-not-summer-without-you9780141330556-716347_720x.jpg?v=1752703734" alt="Book 3 cover image">
+            <h2>It's Not Summer Without You</h2>
+			<h3>Jenny Han</h3>
+            <p>"Jenny Han's "It's Not Summer Without You" features a love triangle between one girl and two brothers. 
+			This book is a must-read for any summer romance fan." -Readers Warehouse<br>
+			<br>
+			Image from Readers Warehouse website<br> 
+			( https://www.readerswarehouse.co.za/ )
+			</p>
+            <button class="buy-btn">Buy</button>
+        </section>
+    </main>
+
+    <!-- About and Contact Section -->
+    <div class="info-wrapper">
+        <!-- About Section -->
+        <section id="about" class="info-box">
+            <h2>About</h2>
+            <p>This webpage project was created as a part of my Web Application Development Advanced Workbook. <br>
+			It’s a static webpage to show the structure of a basic HTML5 webpage using the core elements and CSS styling.<br>
+			This project also demonstrates how HTML and CSS can be used to structure content and also style a visually appealing webpage, including responsive design for devices.<br>
+			<br>
+			Our mission is to create a welcoming space for readers of all ages, with all kinds of interests. <br>
+			We carefully select all books to include both timeless classics as well as modern bestsellers. 
+			Whether you’re seeking inspiration, adventure, or a quiet escape, we have a book for you. 
+</p>
+
+			
+			
+			</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="info-box">
+            <h2>Contact</h2>
+            <p>
+                Phone: 1-800-TheBookNook<br>
+                Address: 1st Ave, ReadStreet, South Africa, 7800<br>
+                Email: onebooknook@contact.com<br><br>
+                Please don’t hesitate to reach out to us!<br>
+				For bulk orders or special requests, please reach out via email or phone. <br>
+				Follow us on social media for the latest arrivals and upcoming events. 
+				We love hearing from The Book Nook community! <br>
+				Visit us during our opening hours: <br>
+				Monday to Saturday, 9am – 6pm.
+							
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 The Book Nook <br>
+		Designed by Jessie King for book lovers everywhere</p>
+    </footer>
+
+</body>
+</html>
