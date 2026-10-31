@@ -1,0 +1,16 @@
+
+name: HTML quality check
+on:
+  push:
+      branches: [main]
+  pull_request:
+      branches: [main]
+jobs:
+  htmlhint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run HTMLHint
+        run: npx --yes htmlhint index.html
