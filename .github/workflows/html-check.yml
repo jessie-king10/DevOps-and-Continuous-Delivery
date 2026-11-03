@@ -1,10 +1,11 @@
+name: Website CI pipeline
 
-name: HTML quality check
 on:
   push:
-      branches: [main]
+    branches: [main]
   pull_request:
-      branches: [main]
+    branches: [main]
+
 jobs:
   htmlhint:
     runs-on: ubuntu-latest
@@ -14,3 +15,13 @@ jobs:
 
       - name: Run HTMLHint
         run: npx --yes htmlhint index.html
+
+      - name: Build Docker image
+        run: docker build -t the-book-nook .
+
+      - name: Test website container
+        run: |
+          docker run -d -p 8080:80 --name book-nook-test the-book-nook
+          sleep 3
+          curl --fail --silent --show-error --output /dev/null http://localhost:8080
+          docker stop book-nook-test
